@@ -1,5 +1,8 @@
+```xml
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000">
@@ -7,42 +10,41 @@
     <TextureView
         android:id="@+id/preview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
     <LinearLayout
-        android:id="@+id/topPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:background="#88000000">
+        android:padding="12dp"
+        android:background="#99000000">
 
         <TextView
             android:id="@+id/statusText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Kamera hazırlanıyor…"
+            android:text="Kamera hazırlanıyor..."
             android:textColor="#FFFFFF"
-            android:textSize="16sp"
-            android:paddingBottom="8dp" />
+            android:textSize="15sp"/>
 
         <TextView
-            android:id="@+id/rangeText"
+            android:id="@+id/infoText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pozlama aralığı: okunuyor…"
-            android:textColor="#FFFFFF"
-            android:textSize="13sp" />
+            android:layout_marginTop="4dp"
+            android:text="Sensör bilgileri..."
+            android:textColor="#BBBBBB"
+            android:textSize="12sp"/>
+
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/bottomPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:background="#AA000000">
+        android:padding="12dp"
+        android:background="#DD000000">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,30 +54,80 @@
             <Spinner
                 android:id="@+id/exposureSpinner"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_height="48dp"
+                android:layout_weight="1"/>
 
             <Spinner
                 android:id="@+id/isoSpinner"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:layout_height="48dp"
+                android:layout_weight="1"/>
+
         </LinearLayout>
 
-        <CheckBox
-            android:id="@+id/continuousCheck"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Arka arkaya çek"
-            android:textColor="#FFFFFF"
-            android:checked="true" />
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/customSeconds"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="Özel sn"
+                android:inputType="number"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#AAAAAA"
+                android:enabled="false"/>
+
+            <EditText
+                android:id="@+id/totalMinutes"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="Toplam dk"
+                android:inputType="numberDecimal"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#AAAAAA"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/deepSkyButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="🌌 Deep Sky"/>
+
+            <Button
+                android:id="@+id/meteorButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="☄ Meteor"/>
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/captureButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="52dp"
             android:text="5 sn geri sayım → ÇEK"
-            android:textSize="16sp" />
+            android:textSize="16sp"/>
+
+        <Button
+            android:id="@+id/stopButton"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="DURDUR"
+            android:enabled="false"/>
+
     </LinearLayout>
 
     <TextView
@@ -83,8 +135,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text=""
         android:textColor="#FFFFFF"
-        android:textSize="64sp"
-        android:visibility="gone" />
+        android:textSize="72sp"
+        android:textStyle="bold"
+        android:visibility="gone"/>
+
 </FrameLayout>
+```
